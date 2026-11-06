@@ -1,0 +1,7 @@
+USE campusexchange;
+CREATE TABLE IF NOT EXISTS item_photos (
+ id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ item_id BIGINT NOT NULL UNIQUE,
+ data LONGBLOB NOT NULL,
+ CONSTRAINT fk_photo_item FOREIGN KEY (item_id) REFERENCES items(id)
+);

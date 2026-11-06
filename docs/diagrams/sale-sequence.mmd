@@ -1,0 +1,18 @@
+sequenceDiagram
+  actor Buyer
+  actor Seller
+  participant Web as Controllers
+  participant Service as MarketplaceService
+  participant DB as MySQL
+  Buyer->>Web: Submit purchase request
+  Web->>Service: requestItem(itemId, currentUser)
+  Service->>DB: Lock item, validate, insert pending request
+  Seller->>Web: Accept request
+  Web->>Service: accept(requestId, currentUser)
+  Service->>DB: Begin READ_COMMITTED transaction; lock item
+  Service->>DB: Refresh request and verify seller/status
+  Service->>DB: Accept request; insert trade; mark sold
+  Service->>DB: Reject other pending requests; commit
+  Web-->>Seller: Show accepted notice
+  Buyer->>Web: Submit seller review from trade history
+

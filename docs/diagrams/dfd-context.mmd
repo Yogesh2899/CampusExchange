@@ -1,0 +1,6 @@
+flowchart LR
+  Student[Student] -->|Credentials, profile, listing, request, review| System[CampusExchange]
+  System -->|Catalogue, request states, history, ratings| Student
+  Admin[Administrator] -->|Moderation and account actions| System
+  System -->|Dashboard and status messages| Admin
+

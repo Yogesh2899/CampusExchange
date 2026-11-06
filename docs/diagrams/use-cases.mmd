@@ -1,0 +1,14 @@
+flowchart LR
+  Student[Student: buyer and seller]
+  Admin[Administrator]
+  Student --> Auth([Register / sign in])
+  Student --> Profile([Manage own profile])
+  Student --> Browse([Browse and filter items])
+  Student --> Listing([Manage own listings and photos])
+  Student --> Request([Send / cancel purchase request])
+  Student --> Respond([Accept / reject received requests])
+  Student --> History([View history / review seller])
+  Admin --> Moderate([Moderate available listings])
+  Admin --> Categories([Manage categories])
+  Admin --> Accounts([Suspend / restore student accounts])
+
