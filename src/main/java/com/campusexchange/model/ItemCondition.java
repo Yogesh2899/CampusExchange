@@ -1,0 +1,8 @@
+package com.campusexchange.model;
+
+public enum ItemCondition {
+  NEW,
+  LIKE_NEW,
+  GOOD,
+  FAIR
+}
